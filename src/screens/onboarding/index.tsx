@@ -52,7 +52,7 @@ function Onboarding({navigation}: OnboardingScreenProp) {
 
   return (
     <Container onPress={onOnboardImageClick}>
-      <ImageBackground source={require('src/assets/onboarding_1.png')} />
+      <ImageBackground source={require('src/assets/onboarding.png')} />
     </Container>
   );
 }
