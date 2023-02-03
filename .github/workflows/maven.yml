@@ -31,22 +31,22 @@ jobs:
     - name: Install node modules
       run: yarn install
 
-    - name: cache gradle wrapper
-      uses: actions/cache@v2
-      with:
-        path: ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
-        restore-keys:  ${{ runner.os }}-gradle-
+    # - name: cache gradle wrapper
+    #   uses: actions/cache@v2
+    #   with:
+    #     path/ ~/.gradle/wrapper
+    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
+    #     restore-keys:  ${{ runner.os }}-gradle-
 
-    - name: cache gradle dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
-        restore-keys: ${{ runner.os }}-gradle-
+    # - name: cache gradle dependencies
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ~/.gradle/caches
+    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
+    #     restore-keys: ${{ runner.os }}-gradle-
 
-    - name: test
-      run:  gradle wrapper
+    # - name: test
+    # run:  gradle wrapper
 
     - name: Make executable Gradle
       run: cd android && chmod +x ./gradlew
