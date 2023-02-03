@@ -26,6 +26,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+
+    - uses: actions/setup-node@master
+    - name: Install node modules
+      run: yarn install
+
     - name: Gradle Build Action
       uses: gradle/gradle-build-action@v2.3.3
       with:
