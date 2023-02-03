@@ -45,6 +45,9 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
         restore-keys: ${{ runner.os }}-gradle-
 
+    - name: test
+      run:  gradle wrapper
+
     - name: Make executable Gradle
       run: cd android && chmod +x ./gradlew
 
