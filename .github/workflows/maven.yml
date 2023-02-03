@@ -52,7 +52,7 @@ jobs:
       run: cd android && chmod +x ./gradlew
 
     - name: Make executable Gradle
-      run: ./gradlew wrapper
+      run: cd android && ./gradlew wrapper
     
 
     - name: build apk
