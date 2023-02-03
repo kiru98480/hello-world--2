@@ -37,8 +37,8 @@ jobs:
     # - name: build aab
     #   run: cd android && ./gradlew assemleRelease
    
-   - name: Achive code
-     uses: actions/upload-artifact@3
-     with:
-      name: apk
-      path: android/app/build/outputs/apk/app-release.apk
+    - name: Achive code
+      uses: actions/upload-artifact@3
+      with:
+        name: apk
+        path: android/app/build/outputs/apk/app-release.apk
