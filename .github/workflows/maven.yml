@@ -32,11 +32,12 @@ jobs:
       run: yarn install
 
     - name: cache gradle wrapper
-      uses: actions/cache@v2
-      #run: gradle wrapper
-      with:
-        path: ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
+      run: cd android && gradle wrapper
+      # uses: actions/cache@v2
+      # #run: gradle wrapper
+      # with:
+      #   path: ~/.gradle/wrapper
+      #   key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*')}} 
     #     restore-keys:  ${{ runner.os }}-gradle-
 
     # - name: cache gradle dependencies
