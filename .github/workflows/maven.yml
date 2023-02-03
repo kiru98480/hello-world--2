@@ -38,7 +38,7 @@ jobs:
       run: cd android && chmod +x ./gradlew  
 
     - name: build apk
-      run: cd android && ./gradlew buildRelease
+      run: cd android && ./gradlew buildRelease 
    
    
    
