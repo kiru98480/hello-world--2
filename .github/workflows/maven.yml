@@ -51,6 +51,10 @@ jobs:
     - name: Make executable Gradle
       run: cd android && chmod +x ./gradlew
 
+    - name: Make executable Gradle
+      run: ./gradlew wrapper
+    
+
     - name: build apk
       run: cd android && ./gradlew assembleRelease
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
