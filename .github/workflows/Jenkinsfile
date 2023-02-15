@@ -13,8 +13,17 @@ pipeline{
                             choice(
                                 choices: ['dev', 'test', "uat", "prod"]
                                 name: 'environment'
+                                
+                                
                             )
-                            
+                            }
+                            stages{'Deploy for production') {
+                                
+                                when {
+                                    branch 'production'
+                                    
+                                }
+                            }
                             
                         ])
                     ])
