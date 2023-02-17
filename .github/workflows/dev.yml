@@ -22,6 +22,9 @@ jobs:
     - uses: actions/setup-node@master
     - name: Install node modules
       run: yarn install
+      
+    - name: Java install
+      run: java -version
 
     - name: cache gradle wrapper
       run: cd android && gradle wrapper
