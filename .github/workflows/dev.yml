@@ -23,8 +23,8 @@ jobs:
     - name: Install node modules
       run: yarn install
       
-    - name: Install node modules
-      run: yarn install
+    - name: check java version
+      run: java -version
       
     - name: cache gradle wrapper
       run: cd android && gradle wrapper
