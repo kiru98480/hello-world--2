@@ -1,0 +1,51 @@
+pipeline{
+
+    agent any
+
+    environment{
+        ANDROID_HOME = "/home/ubuntu/Android/sdk"
+    }
+    stages{
+        stage('checkout'){
+            steps{
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'githubcredential', url: 'https://github.com/kiru98480/react_demo_app.git']])
+            }
+        }
+        stage('npm modules'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage('build Android apk'){
+            steps{
+                dir('android'){
+                    sh "echo $ANDROID_HOME"
+                    sh 'chmod +x gradlew'
+                    sh './gradlew buildRelease'
+                }
+            }
+        }
+        stage('test'){
+            steps{
+                sh "echo Tesiting"
+            }
+        }
+        stage('pod instiallation'){
+            steps{
+                sh 'pod instillation'
+            }
+        }
+        stage('Unitesting'){
+            steps{
+                'mvn' install
+            }
+        }
+        stage('artifact'){
+            steps{
+                sh "archive 'android/apk/build/output/debug/apk-debug.apk'"
+            }
+        }
+
+    }
+
+}
